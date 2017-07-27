@@ -1,6 +1,6 @@
-(function customElementShadowDOM(document, customElements) {
+(function Details(document, customElements) {
   'use strict';
-  class MyCustomElement extends HTMLElement {
+  class DetailsContainer extends HTMLElement {
     constructor() {
       super();
       const shadowRoot = this.attachShadow({mode: 'open'});
@@ -11,6 +11,6 @@
       }
   }
 
-  customElements.define('my-custom-element', MyCustomElement);
+  customElements.define('details-container', DetailsContainer);
 
 })(document, window.customElements);

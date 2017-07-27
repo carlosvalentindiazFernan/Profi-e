@@ -1,4 +1,0 @@
-(function style(){
-  'use strict';
-
-});

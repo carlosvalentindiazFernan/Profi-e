@@ -92,11 +92,6 @@
   }
 
 
-  class prueba{
-    func(param){console.log(param);}
-    }
-
-
   class DetailsContainer extends HTMLElement {
       constructor() {
         super();
@@ -122,9 +117,51 @@
         }
     }
 
+
+  class NameDetails extends HTMLElement {
+    constructor() {
+      super();
+      const shadowRoot = this.attachShadow({mode: 'open'});
+
+      shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="public/css/name.css">
+            <div id="nametext">
+              <p>demo</p>
+            </div>
+          `;
+      }
+  }
+
+
+  class AboutMeDetails extends HTMLElement{
+    constructor() {
+      super();
+      const shadowRoot = this.attachShadow({mode: 'open'});
+
+      shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="public/css/aboutme.css">
+            <div id="aboutmetext">
+              <p>About me text</p>
+            </div>
+          `;
+      }
+
+  }
+
+  class prueba{
+    func(param){console.log(param);}
+    }
+
+
+
+
+
   //Details element
   customElements.define('imgage-details', ImageDetails);
   customElements.define('details-container', DetailsContainer);
+  customElements.define('name-details', NameDetails);
+  customElements.define('aboutme-details',AboutMeDetails);
+
 
   //Nev Bar
   customElements.define('component-list', ComponentList);

@@ -8,6 +8,8 @@
 
     		const shadowRoot = this.attachShadow({mode: 'open'});
     		   shadowRoot.innerHTML = `
+              <link rel="stylesheet" href="public/css/nav.css">
+
                <div class="container">
 
                    <ul>
@@ -18,19 +20,6 @@
                     </ul>
 
                </div>
-
-               <style>
-
-                  div{
-
-                  	width: 300px;
-                    height: 400px;
-                  	background:  #3B5998;;
-                  	border-radius: 10px;
-                    box-shadow: 5px 6px 5px #333;
-                  }
-
-               </style>
             `;
 
     	}
@@ -53,9 +42,9 @@
                     text-decoration: none;
                     list-style:none;
                   	margin:30px 10px 20px 10px;
-                  	color: white;
+                  	color: #fff;
                   	cursor:pointer;
-                  	border-bottom: 1px solid #333;
+                    background-color: #e91e63;
                   	width:100%;
                   	position:relative;
                   	left:-30px;
@@ -64,8 +53,8 @@
                   }
 
                   li:hover{
-
-                  	color:gray;
+                    background-color: #fff;
+                  	color:#e91e63;
                   }
               </style>
 
@@ -98,7 +87,11 @@
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
           <link rel="stylesheet" href="public/css/details.css">
-          <section>demo</section>
+          <section>
+            <imgage-details></imgage-details>
+            <name-details></name-details>
+            <aboutme-details></aboutme-details>
+          </section>
         `;
         }
     }

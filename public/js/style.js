@@ -1,6 +1,53 @@
 (function componentContainer(document){
   'use strict';
 
+  const users =[
+    {
+      id : "1",
+      name : "carlos",
+      img : "public/img/batman.jpg",
+      about : "Me gusta la pizza"
+
+    },
+    {
+      id : "2",
+      name : "pedro",
+      img : "public/img/iron.jpg",
+      about : "Quiero dormir"
+
+    },
+    {
+      id : "3",
+      name : "juan",
+      img : "public/img/super.jpg",
+      about : "Hola soy juan :)"
+
+    },
+    {
+      id : "4",
+      name : "alex",
+      img : "public/img/verde.jpg",
+      about : "no me molestes"
+
+    }
+  ]
+
+
+  class EventToDetails{
+
+    static getUser(userName){
+
+      for(let elemnt of users ){
+        if(elemnt.name == userName){
+            return elemnt
+        }
+      }
+     return null;
+    }
+
+  }
+
+
   class ContainerList extends HTMLElement{
 
     	constructor(){
@@ -56,6 +103,8 @@
                     background-color: #fff;
                   	color:#e91e63;
                   }
+
+
               </style>
 
 		      `;
@@ -66,8 +115,7 @@
 
           shadowRoot.addEventListener('click',() =>{
             console.log(this.getAttribute("name"));
-            const p= new prueba();
-            p.func(this.getAttribute("name"));
+             EventToDetails.getUser(this.getAttribute("name"));
           });
 	   }
 
@@ -122,6 +170,10 @@
               <p>demo</p>
             </div>
           `;
+
+      }
+
+      static getGato(){
       }
   }
 
@@ -141,12 +193,11 @@
 
   }
 
+
+
   class prueba{
     func(param){console.log(param);}
     }
-
-
-
 
 
   //Details element
@@ -160,13 +211,7 @@
   customElements.define('component-list', ComponentList);
   customElements.define('container-list', ContainerList);
 
-  const ElementList = customElement.get('component-list');
-  const elementList = new ElementList();
-  const otherElement = document.createElement('component-list');
 
-  document.body.append(elementList);
-  document.body.append(customElement);
-
-
+  NameDetails.getGato();
 
 })(document);

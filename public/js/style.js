@@ -36,7 +36,6 @@
     	}
     }
 
- //CODIGO PARA EL COMPONENTE LISTA
 
   class ComponentList extends HTMLElement{
 
@@ -97,6 +96,37 @@
     func(param){console.log(param);}
     }
 
+
+  class DetailsContainer extends HTMLElement {
+      constructor() {
+        super();
+        const shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = `
+          <link rel="stylesheet" href="public/css/details.css">
+          <section>demo</section>
+        `;
+        }
+    }
+
+
+  class ImageDetails extends HTMLElement {
+      constructor() {
+        super();
+        const shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = `
+          <link rel="stylesheet" href="public/css/imagedetails.css">
+          <div id="ImgeDetails">
+            <img src="https://avatars1.githubusercontent.com/u/10068053?v=4&u=837fd229b3d0751eeb11ff4f812d14548e4b20e1&s=400"/>
+          </div>
+        `;
+        }
+    }
+
+  //Details element
+  customElements.define('imgage-details', ImageDetails);
+  customElements.define('details-container', DetailsContainer);
+
+  //Nev Bar
   customElements.define('component-list', ComponentList);
   customElements.define('container-list', ContainerList);
 
@@ -106,6 +136,7 @@
 
   document.body.append(elementList);
   document.body.append(customElement);
+
 
 
 })(document);
